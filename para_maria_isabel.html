@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para María Isabel 💙</title>
+  <style>
+    body {
+      background-color: #e6f2ff;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .heart-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      top: 0;
+      left: 0;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Emoji_u1f499.svg/32px-Emoji_u1f499.svg.png');
+      background-repeat: repeat;
+      background-size: 30px 30px;
+      opacity: 0.2;
+    }
+
+    h1 {
+      color: #004080;
+      font-size: 3em;
+      margin-top: 50px;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #003366;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .nickname {
+      font-size: 1.8em;
+      color: #0055aa;
+      margin-top: 10px;
+    }
+
+    .asmo {
+      font-size: 2em;
+      color: #0066cc;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    .video {
+      margin: 40px auto;
+      box-shadow: 0 0 20px #3399ff;
+      border-radius: 10px;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .heart {
+      position: absolute;
+      background-color: #3399ff;
+      transform: rotate(45deg);
+      animation: float 20s linear forwards;
+      pointer-events: none;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      background-color: inherit;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50%;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -50%;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .boton {
+      margin: 50px auto;
+      font-size: 1.5em;
+      background-color: #3399ff;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+
+    .boton:hover {
+      background-color: #1a75ff;
+    }
+
+    #mensajeFinal {
+      margin-top: 30px;
+      font-size: 1.6em;
+      color: #003366;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart-bg"></div>
+
+  <h1>Para ti María Isabel el amor de mi vida 💙</h1>
+
+  <div class="nickname">Mi pinchecha hermosha 💙</div>
+  <div class="nickname">Mi amor mi vida mi rata podrida 💙</div>
+
+  <p>Bueno mi amor hermoso te quería hacer algo bonito y ps pensé en esto AJAJAJAJAJ bueno</p>
+  <p>Te quiero decir mi niña eres lo mejor que me ha pasado en la vida te agradezco mucho por ser esa mujer tan maravillosa. Eres fuerte, eres valiente, eres inteligente, eres hermosa. No me quedan palabras para expresar todo lo que siento por ti. Estoy agradecido de tener a esta mujer tan perfecta en mi vida. Eres mi motivo de vida. Gracias por estar siempre para mí. No sabes cuánto te asmo, mi niña. Tú eres el amor de mi vida y siempre lo serás. Te mereces el mundo entero. Nunca dudes de la mujer tan magnífica que eres. Cada momento que pase contigo es un regalo en mi vida. A veces te veo y aún me pregunto cómo puedo tener una mujer así. Gracias a Dios por ponerme en tu vida. Hemos pasado momentos difíciles juntos, pero los hemos sabido superar. Me encantan esas risas, los abrazos, tus besos. Me encanta todo de ti. Eres mi otra mitad, mi felicidad entera. Te prometo que siempre estaré para ti pase lo que pase. Te asmo mucho, mi niña, mi vida, mi bella mujer. Te asmo de aquí a la luna a pasitos de tortuga. GRACIAS POR TANTO MI CIELO HERMOSO.</p>
+
+  <p class="asmo">Te asmo mucho con toda mi alma de aquí al infinito y más allá. I globiu forever my loba hermosa 💙💙💙</p>
+
+  <div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/rZBbJfNM1qI?start=10" 
+      title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+
+  <center><button class="boton" onclick="mostrarMensaje()">Haz clic si tú también me asmas 💙</button></center>
+
+  <div id="mensajeFinal">Awwww, yo tambiénnn te asmoo muchoooo 💙</div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+
+      const size = Math.floor(Math.random() * 25) + 15;
+      heart.style.width = `${size}px`;
+      heart.style.height = `${size}px`;
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.top = window.innerHeight + 'px';
+
+      const blues = ['#66ccff', '#3399ff', '#0066cc', '#1a75ff', '#99ccff', '#4da6ff'];
+      heart.style.backgroundColor = blues[Math.floor(Math.random() * blues.length)];
+      heart.style.zIndex = 0;
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 20000);
+    }
+
+    setInterval(createHeart, 200);
+
+    function mostrarMensaje() {
+      document.getElementById('mensajeFinal').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
